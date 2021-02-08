@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+<!--    xml手动装配-->
+<!--    <bean id="person1" class="com.bai.pojo.Person" scope="prototype">-->
+<!--        <constructor-arg name="name" value="holy"/>-->
+<!--        <property name="age" value="18"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="person2" class="com.bai.pojo.Person">-->
+<!--        <constructor-arg name="name" value="shit"/>-->
+<!--        <constructor-arg name="age" value="29"/>-->
+<!--    </bean>-->
+
+    <bean id="cat" class="com.bai.pojo.Cat">
+        <constructor-arg name="age" value="1"/>
+        <constructor-arg name="name" value="mimi"/>
+        <constructor-arg name="type" value="chinaCat"/>
+    </bean>
+
+<!--    <bean id="person3" class="com.bai.pojo.Person">-->
+<!--        <constructor-arg name="name" value="bai"/>-->
+<!--        <constructor-arg name="age" value="22"/>-->
+<!--        <constructor-arg name="pet" ref="cat"/>-->
+<!--    </bean>-->
+
+
+<!--xml自动装配-->
+    <bean id="person4" class="com.bai.pojo.Person" autowire="byName">
+        <property name="name" value="guo"/>
+        <property name="age" value="22"/>
+    </bean>
+
+    <bean id="person5" class="com.bai.pojo.Person" autowire="byType">
+        <property name="name" value="li"/>
+        <property name="age" value="24"/>
+    </bean>
+
+<!--    <bean id="pet" class="com.bai.pojo.Cat">-->
+<!--        <property name="name" value="xiaohuang"/>-->
+<!--        <property name="age" value="3"/>-->
+<!--        <property name="type" value="chinaCat"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="anotherPet" class="com.bai.pojo.Pet" abstract="true"/>-->
+
+</beans>
